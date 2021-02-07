@@ -15,8 +15,8 @@ namespace DockerWorkshop
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
-                    .UseKestrel(serverOption => {
-                        serverOption.ListenLocalhost(8080);
+                    .UseKestrel(serverOptions => {
+                        serverOptions.ListenAnyIP(80);
                     })
                     .UseStartup<Startup>();    
                 });
