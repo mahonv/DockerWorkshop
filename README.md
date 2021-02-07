@@ -40,7 +40,7 @@ What compose this command line :
 - --name {name} for naming container to run
 - p for port binding, left part is the external rule and right side the container internal port
 ex: 9200:8200 bind outside port 9200 and container port 8200
-- e for environment variable (can be multiple)
+- -e for environment variable (can be multiple)
 - finally the required image name 
 
 ```
@@ -68,6 +68,7 @@ We will now interest on create our own image with an API inside
 ### Development vs Runtime
 
 Like Java has JDK and JRE Dotnet have SDK and Runtime
+
 One for development the other for exposing the application
 
 ### Building & Running with command line
@@ -93,10 +94,10 @@ Create "Dockerfile" at root of our project
 
 ```
 // Build my image containing API
-docker build -t myfirstdocker .
+docker build -t myfirstdockerimage .
 
 // Run my image
-docker run -d --rm --name monapi -p 127.0.0.1:80:80 myfirstdocker
+docker run -d --rm --name monapi -p 127.0.0.1:80:80 myfirstdockerimage
 ```
 
 How many time can you run your API localy ? what do you need to change to run twice your API ?
